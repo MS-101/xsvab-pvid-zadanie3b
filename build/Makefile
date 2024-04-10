@@ -123,6 +123,33 @@ main.exe/fast:
 	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/build
 .PHONY : main.exe/fast
 
+src/backgroundSubstraction.o: src/backgroundSubstraction.cpp.o
+
+.PHONY : src/backgroundSubstraction.o
+
+# target to build an object file
+src/backgroundSubstraction.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o
+.PHONY : src/backgroundSubstraction.cpp.o
+
+src/backgroundSubstraction.i: src/backgroundSubstraction.cpp.i
+
+.PHONY : src/backgroundSubstraction.i
+
+# target to preprocess a source file
+src/backgroundSubstraction.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.i
+.PHONY : src/backgroundSubstraction.cpp.i
+
+src/backgroundSubstraction.s: src/backgroundSubstraction.cpp.s
+
+.PHONY : src/backgroundSubstraction.s
+
+# target to generate assembly for a file
+src/backgroundSubstraction.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.s
+.PHONY : src/backgroundSubstraction.cpp.s
+
 src/common.o: src/common.cpp.o
 
 .PHONY : src/common.o
@@ -231,6 +258,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/opticalFlow.o: src/opticalFlow.cpp.o
+
+.PHONY : src/opticalFlow.o
+
+# target to build an object file
+src/opticalFlow.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o
+.PHONY : src/opticalFlow.cpp.o
+
+src/opticalFlow.i: src/opticalFlow.cpp.i
+
+.PHONY : src/opticalFlow.i
+
+# target to preprocess a source file
+src/opticalFlow.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/opticalFlow.cpp.i
+.PHONY : src/opticalFlow.cpp.i
+
+src/opticalFlow.s: src/opticalFlow.cpp.s
+
+.PHONY : src/opticalFlow.s
+
+# target to generate assembly for a file
+src/opticalFlow.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/opticalFlow.cpp.s
+.PHONY : src/opticalFlow.cpp.s
+
 src/superpixels.o: src/superpixels.cpp.o
 
 .PHONY : src/superpixels.o
@@ -294,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main.exe"
 	@echo "... edit_cache"
+	@echo "... src/backgroundSubstraction.o"
+	@echo "... src/backgroundSubstraction.i"
+	@echo "... src/backgroundSubstraction.s"
 	@echo "... src/common.o"
 	@echo "... src/common.i"
 	@echo "... src/common.s"
@@ -306,6 +363,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/opticalFlow.o"
+	@echo "... src/opticalFlow.i"
+	@echo "... src/opticalFlow.s"
 	@echo "... src/superpixels.o"
 	@echo "... src/superpixels.i"
 	@echo "... src/superpixels.s"

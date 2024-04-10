@@ -19,22 +19,19 @@ void superpixels(std::string name, cv::Mat input, cv::Mat truthMask, cv::Mat tru
 
     cv::Mat output = input.clone();
     output.setTo(cv::Scalar(0, 0, 255), mask);
-    
+
     outputSuperpixels(name, input, blur, mask, output, truthMask, truth);
 }
 
 void outputSuperpixels(std::string name, cv::Mat input, cv::Mat blur, cv::Mat mask, cv::Mat output, cv::Mat truthMask, cv::Mat truth)
 {
-    cv::Mat maskBGR;
-    grayToBGR(mask, maskBGR);
-
-    cv::Mat truthMaskBGR;
-    grayToBGR(truthMask, truthMaskBGR);
+    cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+    cv::cvtColor(truthMask, truthMask, cv::COLOR_GRAY2BGR);
 
     std::vector<std::vector<cv::Mat>> images = {
 		{ input, blur },
-        { maskBGR, output },
-        { truthMaskBGR, truth }
+        { mask, output },
+        { truthMask, truth }
 	};
 
     outputImage(images, { name, "../output/VOC12/superpixels/", ".jpg" });

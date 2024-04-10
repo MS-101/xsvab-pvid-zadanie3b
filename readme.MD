@@ -22,6 +22,9 @@ Pre tento experiment sme si pre naše obrázky manuálne vytvorili masku, kde bi
 
 ![](input/VOC12/masks/2007_000033.jpg)
 
+Vo výstupnom obrázku môžete hore vidieť vstupný obrázok a jeho ručne vytvorenú masku.
+V druhom riadku vidíte masku vytvorenú po 10 iteráciach grabcut algoritmu na pôvodnej maske a segmentovaný obrázok vytvorený aplikáciou tejto vypočítanej masky. Dole vidíte pravdivú masku a segmentovaný obrázok. Tento experiment bol úspešný a dosahoval vysoké dice skóre.
+
 	void grabcut(std::string name, cv::Mat input, cv::Mat mask, cv::Mat truthMask, cv::Mat truth)
 	{
 		cv::Mat maskGrabcut;
@@ -45,7 +48,7 @@ Vypočítané dice skóre: 0.809587
 
 ### Superpixely
 
-TBA
+Vo výstupnom obrázku môžete hore vidieť vstupný obrázok a následne jeho rozmazanú verziu po aplikácii gausovského filtra. Obrázok sme rozmazali, lebo obsahoval príliš veľa detailov. Obrázok sme museli konvertovať do LAB farebného priestoru pre správne fungovanie algoritmu. V druhom riadku vidíte masku vytvorenú po 50 iteráciach SLIC algoritmu a pôvodný obrázok spojený s touto zafarbenou maskou. Dole vidíte pravdivú masku a segmentovaný obrázok.
 
 	void superpixels(std::string name, cv::Mat input, cv::Mat truthMask, cv::Mat truth)
 	{
@@ -73,7 +76,7 @@ Pri tomto algoritme sme nepočítali dice skóre.
 
 ### Floodfill
 
-TBA
+Vo výstupnom obrázku môžete hore vidieť vstupný obrázok. V druhom riadku vidíte masku vytvorenú po aplikácii floodfill algoritmu a obrázok získaný aplikáciou tejto masky. Na binarizáciu obrázku sme použili OTSU thresholding, seed point je nastavený na pozíciu [0, 0]. Dole vidíte pravdivú masku a segmentovaný obrázok.
 
 	void floodfill(std::string name, cv::Mat input, cv::Mat truthMask, cv::Mat truth)
 	{
@@ -100,7 +103,7 @@ Vypočítané dice skóre: 0.0423924
 
 ### Threshold
 
-TBA
+Vo výstupnom obrázku môžete hore vidieť vstupný obrázok. V druhom riadku vidíte masku vytvorenú po aplikácii OTSU thresholding algoritmu a obrázok získaný aplikáciou tejto masky. Dole vidíte pravdivú masku a segmentovaný obrázok.
 
 	void threshold(std::string name, cv::Mat input, cv::Mat truthMask, cv::Mat truth)
 	{

@@ -31,12 +31,6 @@ void outputDiceScore(std::string name, cv::Mat image1, cv::Mat image2)
 	std::cout << "[" << name << "] dice score = " << dice << std::endl;
 }
 
-void grayToBGR(cv::Mat gray, cv::Mat& bgr)
-{
-	std::vector<cv::Mat> channels = { gray, gray, gray };
-	cv::merge(channels, bgr);
-}
-
 void createTruthMask(cv::Mat input, cv::Mat& output, int blue, int green, int red)
 {
 	output = input.clone();
@@ -62,12 +56,11 @@ void createTruthMask(cv::Mat input, cv::Mat& output, int blue, int green, int re
 
 void outputTruthMask(std::string name, cv::Mat input, cv::Mat label, cv::Mat truthMask, cv::Mat truth)
 {
-	cv::Mat truthMaskBGR;
-	grayToBGR(truthMask, truthMaskBGR);
+    cv::cvtColor(truthMask, truthMask, cv::COLOR_GRAY2BGR);
 
 	std::vector<std::vector<cv::Mat>> images = {
 		{ input, label },
-		{ truthMaskBGR, truth }
+		{ truthMask, truth }
 	};
 
 	outputImage(images, { name, "../output/VOC12/truth/", ".jpg" });
@@ -75,15 +68,6 @@ void outputTruthMask(std::string name, cv::Mat input, cv::Mat label, cv::Mat tru
 
 void applyMask(cv::Mat input, cv::Mat mask, cv::Mat& output)
 {
-	output = input.clone();
-
-	for (int y = 0; y < output.rows; y++) {
-		for (int x = 0; x < output.cols; x++) {
-			cv::Vec3b& imagePixel = output.at<cv::Vec3b>(y, x);
-			uchar maskPixel = mask.at<uchar>(y, x);
-
-			if (maskPixel == 0)
-				imagePixel = 0;
-		}
-	}
+	cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+	cv::bitwise_and(input, mask, output);
 }

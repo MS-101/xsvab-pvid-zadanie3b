@@ -21,16 +21,13 @@ void outputThreshold(std::string name, cv::Mat input, cv::Mat mask, cv::Mat outp
     cv::Mat empty = input.clone();
     empty = 0;
 
-    cv::Mat maskBGR;
-    grayToBGR(mask, maskBGR);
-
-    cv::Mat truthMaskBGR;
-    grayToBGR(truthMask, truthMaskBGR);
+    cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+    cv::cvtColor(truthMask, truthMask, cv::COLOR_GRAY2BGR);
 
     std::vector<std::vector<cv::Mat>> images = {
 		{ input, empty },
-        { maskBGR, output },
-        { truthMaskBGR, truth }
+        { mask, output },
+        { truthMask, truth }
 	};
 
     outputImage(images, { name, "../output/VOC12/threshold/", ".jpg" });

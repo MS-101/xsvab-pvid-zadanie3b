@@ -67,21 +67,17 @@ void toDisplayMask(cv::Mat mask, cv::Mat& output)
 
 void outputGrabcut(std::string name, cv::Mat input, cv::Mat maskBefore, cv::Mat maskAfter, cv::Mat output, cv::Mat truthMask, cv::Mat truth)
 {
-	cv::Mat maskBeforeBGR;
-	grayToBGR(maskBefore, maskBeforeBGR);
+	outputDiceScore(name, maskAfter, truthMask);
 
-	cv::Mat maskAfterBGR;
-	grayToBGR(maskAfter, maskAfterBGR);
-
-	cv::Mat truthMaskBGR;
-	grayToBGR(truthMask, truthMaskBGR);
+	cv::cvtColor(maskBefore, maskBefore, cv::COLOR_GRAY2BGR);
+	cv::cvtColor(maskAfter, maskAfter, cv::COLOR_GRAY2BGR);
+	cv::cvtColor(truthMask, truthMask, cv::COLOR_GRAY2BGR);
 
 	std::vector<std::vector<cv::Mat>> images = {
-		{ input, maskBeforeBGR },
-		{ maskAfterBGR, output },
-		{ truthMaskBGR, truth }
+		{ input, maskBefore },
+		{ maskAfter, output },
+		{ truthMask, truth }
 	};
 
 	outputImage(images, { name, "../output/VOC12/grabcut/", ".jpg" });
-	outputDiceScore(name, maskAfter, truthMask);
 }

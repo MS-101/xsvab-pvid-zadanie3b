@@ -23,21 +23,19 @@ void floodfill(std::string name, cv::Mat input, cv::Mat truthMask, cv::Mat truth
 
 void outputFloodfill(std::string name, cv::Mat input, cv::Mat mask, cv::Mat output, cv::Mat truthMask, cv::Mat truth)
 {
+    outputDiceScore(name, mask, truthMask);
+
     cv::Mat empty = input.clone();
     empty = 0;
 
-    cv::Mat maskBGR;
-    grayToBGR(mask, maskBGR);
-
-    cv::Mat truthMaskBGR;
-    grayToBGR(truthMask, truthMaskBGR);
+    cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+    cv::cvtColor(truthMask, truthMask, cv::COLOR_GRAY2BGR);
 
 	std::vector<std::vector<cv::Mat>> images = {
 		{ input, empty },
-        { maskBGR, output },
-        { truthMaskBGR, truth }
+        { mask, output },
+        { truthMask, truth }
 	};
 
-	outputImage(images, { name, "../output/VOC12/floodfill/", ".jpg" });
-    outputDiceScore(name, mask, truthMask);
+	outputImage(images, { name, "../output/VOC12/floodfill/", ".jpg" });   
 }

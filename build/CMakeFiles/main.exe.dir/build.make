@@ -57,9 +57,33 @@ include CMakeFiles/main.exe.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.exe.dir/flags.make
 
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o: CMakeFiles/main.exe.dir/flags.make
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o: ../src/backgroundSubstraction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o -c /home/pvid-zadanie3/src/backgroundSubstraction.cpp
+
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pvid-zadanie3/src/backgroundSubstraction.cpp > CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.i
+
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pvid-zadanie3/src/backgroundSubstraction.cpp -o CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.s
+
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.requires
+
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.provides: CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.provides.build
+.PHONY : CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.provides
+
+CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.provides.build: CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o
+
+
 CMakeFiles/main.exe.dir/src/common.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/common.cpp.o: ../src/common.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.exe.dir/src/common.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.exe.dir/src/common.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/common.cpp.o -c /home/pvid-zadanie3/src/common.cpp
 
 CMakeFiles/main.exe.dir/src/common.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/main.exe.dir/src/common.cpp.o.provides.build: CMakeFiles/main.exe.dir
 
 CMakeFiles/main.exe.dir/src/floodfill.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/floodfill.cpp.o: ../src/floodfill.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.exe.dir/src/floodfill.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.exe.dir/src/floodfill.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/floodfill.cpp.o -c /home/pvid-zadanie3/src/floodfill.cpp
 
 CMakeFiles/main.exe.dir/src/floodfill.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/main.exe.dir/src/floodfill.cpp.o.provides.build: CMakeFiles/main.exe.
 
 CMakeFiles/main.exe.dir/src/grabcut.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/grabcut.cpp.o: ../src/grabcut.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.exe.dir/src/grabcut.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.exe.dir/src/grabcut.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/grabcut.cpp.o -c /home/pvid-zadanie3/src/grabcut.cpp
 
 CMakeFiles/main.exe.dir/src/grabcut.cpp.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/main.exe.dir/src/grabcut.cpp.o.provides.build: CMakeFiles/main.exe.di
 
 CMakeFiles/main.exe.dir/src/main.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.exe.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.exe.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/main.cpp.o -c /home/pvid-zadanie3/src/main.cpp
 
 CMakeFiles/main.exe.dir/src/main.cpp.i: cmake_force
@@ -153,9 +177,33 @@ CMakeFiles/main.exe.dir/src/main.cpp.o.provides: CMakeFiles/main.exe.dir/src/mai
 CMakeFiles/main.exe.dir/src/main.cpp.o.provides.build: CMakeFiles/main.exe.dir/src/main.cpp.o
 
 
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o: CMakeFiles/main.exe.dir/flags.make
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o: ../src/opticalFlow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o -c /home/pvid-zadanie3/src/opticalFlow.cpp
+
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.exe.dir/src/opticalFlow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pvid-zadanie3/src/opticalFlow.cpp > CMakeFiles/main.exe.dir/src/opticalFlow.cpp.i
+
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.exe.dir/src/opticalFlow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pvid-zadanie3/src/opticalFlow.cpp -o CMakeFiles/main.exe.dir/src/opticalFlow.cpp.s
+
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.requires
+
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.provides: CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.provides.build
+.PHONY : CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.provides
+
+CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.provides.build: CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o
+
+
 CMakeFiles/main.exe.dir/src/superpixels.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/superpixels.cpp.o: ../src/superpixels.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.exe.dir/src/superpixels.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.exe.dir/src/superpixels.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/superpixels.cpp.o -c /home/pvid-zadanie3/src/superpixels.cpp
 
 CMakeFiles/main.exe.dir/src/superpixels.cpp.i: cmake_force
@@ -179,7 +227,7 @@ CMakeFiles/main.exe.dir/src/superpixels.cpp.o.provides.build: CMakeFiles/main.ex
 
 CMakeFiles/main.exe.dir/src/threshold.cpp.o: CMakeFiles/main.exe.dir/flags.make
 CMakeFiles/main.exe.dir/src/threshold.cpp.o: ../src/threshold.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.exe.dir/src/threshold.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.exe.dir/src/threshold.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.exe.dir/src/threshold.cpp.o -c /home/pvid-zadanie3/src/threshold.cpp
 
 CMakeFiles/main.exe.dir/src/threshold.cpp.i: cmake_force
@@ -203,20 +251,24 @@ CMakeFiles/main.exe.dir/src/threshold.cpp.o.provides.build: CMakeFiles/main.exe.
 
 # Object files for target main.exe
 main_exe_OBJECTS = \
+"CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o" \
 "CMakeFiles/main.exe.dir/src/common.cpp.o" \
 "CMakeFiles/main.exe.dir/src/floodfill.cpp.o" \
 "CMakeFiles/main.exe.dir/src/grabcut.cpp.o" \
 "CMakeFiles/main.exe.dir/src/main.cpp.o" \
+"CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o" \
 "CMakeFiles/main.exe.dir/src/superpixels.cpp.o" \
 "CMakeFiles/main.exe.dir/src/threshold.cpp.o"
 
 # External object files for target main.exe
 main_exe_EXTERNAL_OBJECTS =
 
+main.exe: CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/common.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/floodfill.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/grabcut.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/main.cpp.o
+main.exe: CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/superpixels.cpp.o
 main.exe: CMakeFiles/main.exe.dir/src/threshold.cpp.o
 main.exe: CMakeFiles/main.exe.dir/build.make
@@ -274,7 +326,7 @@ main.exe: /usr/local/lib/libopencv_photo.so.4.9.0
 main.exe: /usr/local/lib/libopencv_imgproc.so.4.9.0
 main.exe: /usr/local/lib/libopencv_core.so.4.9.0
 main.exe: CMakeFiles/main.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pvid-zadanie3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -282,10 +334,12 @@ CMakeFiles/main.exe.dir/build: main.exe
 
 .PHONY : CMakeFiles/main.exe.dir/build
 
+CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/backgroundSubstraction.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/common.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/floodfill.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/grabcut.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/main.cpp.o.requires
+CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/opticalFlow.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/superpixels.cpp.o.requires
 CMakeFiles/main.exe.dir/requires: CMakeFiles/main.exe.dir/src/threshold.cpp.o.requires
 

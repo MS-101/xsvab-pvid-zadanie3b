@@ -1,15 +1,14 @@
+#include "common.h"
 #include "grabcut.h"
 #include "superpixels.h"
 #include "floodfill.h"
 #include "threshold.h"
-#include "common.h"
+#include "backgroundSubstraction.h"
+#include "opticalFlow.h"
 #include <opencv2/opencv.hpp>
-#include <unordered_map>
 
-
-int main() {
-	// VOC12 dataset segmentation
-
+void voc12()
+{
 	std::string inputDir = "../input/VOC12/images/";
 	std::string labelDir = "../input/VOC12/labels/";
 	std::string maskDir = "../input/VOC12/masks/";
@@ -46,6 +45,41 @@ int main() {
 		floodfill(imageName, input, truthMask, truth);
 		threshold(imageName, input, truthMask, truth);
 	}
+}
+
+void pedestrian()
+{
+	std::vector<std::string> videoNames = {
+		"fourway.avi"
+	};
+
+	std::string inputDir = "../input/Pedestrian/";
+
+	for (std::string videoName : videoNames)
+	{
+		// load input
+
+		cv::VideoCapture input(inputDir + videoName);	
+
+		// perform motion tracking
+
+		accumWeighted(videoName, input);
+		mog2(videoName, input);
+		sparseOpticalFlow(videoName, input);
+		denseOpticalFlow(videoName, input);
+
+		// close input
+
+		input.release();
+	}
+
+
+}
+
+
+int main() {
+	// voc12();
+	// pedestrian();
 
 	return 0;
 }
