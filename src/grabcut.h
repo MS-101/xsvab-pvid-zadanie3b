@@ -3,8 +3,8 @@
 #include <opencv2/opencv.hpp>
 
 
-void grabcut(cv::Mat input, cv::Mat mask, cv::Mat truth);
+void grabcut(std::string name, cv::Mat input, cv::Mat mask, cv::Mat truthMask, cv::Mat truth);
 void toGrabcutMask(cv::Mat mask, cv::Mat& output);
 void toDisplayMask(cv::Mat mask, cv::Mat& output);
 void applyGrabcutMask(cv::Mat input, cv::Mat mask, cv::Mat& output);
-void outputGrabcutResults(cv::Mat input, cv::Mat maskBefore, cv::Mat maskAfter, cv::Mat output, cv::Mat truth);
+void outputGrabcut(std::string name, cv::Mat input, cv::Mat maskBefore, cv::Mat maskAfter, cv::Mat output, cv::Mat truthMask, cv::Mat truth);

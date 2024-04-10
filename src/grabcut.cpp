@@ -1,8 +1,9 @@
 #include "grabcut.h"
 #include "common.h"
+#include <iostream>
 
 
-void grabcut(cv::Mat input, cv::Mat mask, cv::Mat truth)
+void grabcut(std::string name, cv::Mat input, cv::Mat mask, cv::Mat truthMask, cv::Mat truth)
 {
 	cv::Mat maskGrabcut;
 	toGrabcutMask(mask, maskGrabcut);
@@ -14,10 +15,9 @@ void grabcut(cv::Mat input, cv::Mat mask, cv::Mat truth)
 	toDisplayMask(maskGrabcut, maskAfter);
 
 	cv::Mat output;
-	applyGrabcutMask(input, maskAfter, output);
+	applyMask(input, maskAfter, output);
 
-	outputGrabcutResults(input, mask, maskAfter, output, truth);
-	cv::waitKey();
+	outputGrabcut(name, input, mask, maskAfter, output, truthMask, truth);
 }
 
 void toGrabcutMask(cv::Mat mask, cv::Mat& output)
@@ -65,40 +65,23 @@ void toDisplayMask(cv::Mat mask, cv::Mat& output)
 	}
 }
 
-void applyGrabcutMask(cv::Mat input, cv::Mat mask, cv::Mat& output)
+void outputGrabcut(std::string name, cv::Mat input, cv::Mat maskBefore, cv::Mat maskAfter, cv::Mat output, cv::Mat truthMask, cv::Mat truth)
 {
-	output = input.clone();
-
-	for (int y = 0; y < output.rows; y++) {
-		for (int x = 0; x < output.cols; x++) {
-			cv::Vec3b& imagePixel = output.at<cv::Vec3b>(y, x);
-			uchar maskPixel = mask.at<uchar>(y, x);
-
-			if (maskPixel == 0) {
-				imagePixel[0] = 0;
-				imagePixel[1] = 0;
-				imagePixel[2] = 0;
-			}
-		}
-	}
-}
-
-void outputGrabcutResults(cv::Mat input, cv::Mat maskBefore, cv::Mat maskAfter, cv::Mat output, cv::Mat truth)
-{
-	std::vector<cv::Mat> maskBeforeChannels = { maskBefore, maskBefore, maskBefore };
 	cv::Mat maskBeforeBGR;
-	cv::merge(maskBeforeChannels, maskBeforeBGR);
+	grayToBGR(maskBefore, maskBeforeBGR);
 
-	std::vector<cv::Mat> maskAfterChannels = { maskAfter, maskAfter, maskAfter };
 	cv::Mat maskAfterBGR;
-	cv::merge(maskAfterChannels, maskAfterBGR);
+	grayToBGR(maskAfter, maskAfterBGR);
 
-	cv::Mat empty = input.clone();
-	empty *= 0;
+	cv::Mat truthMaskBGR;
+	grayToBGR(truthMask, truthMaskBGR);
 
 	std::vector<std::vector<cv::Mat>> images = {
-		{ input, maskBeforeBGR, maskAfterBGR },
-		{ output, truth, empty }
+		{ input, maskBeforeBGR },
+		{ maskAfterBGR, output },
+		{ truthMaskBGR, truth }
 	};
-	outputImage(images, { "grabcut", "../output/VOC12/grabcut/", ".jpeg" });
+
+	outputImage(images, { name, "../output/VOC12/grabcut/", ".jpg" });
+	outputDiceScore(name, maskAfter, truthMask);
 }

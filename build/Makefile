@@ -123,6 +123,87 @@ main.exe/fast:
 	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/build
 .PHONY : main.exe/fast
 
+src/common.o: src/common.cpp.o
+
+.PHONY : src/common.o
+
+# target to build an object file
+src/common.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/common.cpp.o
+.PHONY : src/common.cpp.o
+
+src/common.i: src/common.cpp.i
+
+.PHONY : src/common.i
+
+# target to preprocess a source file
+src/common.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/common.cpp.i
+.PHONY : src/common.cpp.i
+
+src/common.s: src/common.cpp.s
+
+.PHONY : src/common.s
+
+# target to generate assembly for a file
+src/common.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/common.cpp.s
+.PHONY : src/common.cpp.s
+
+src/floodfill.o: src/floodfill.cpp.o
+
+.PHONY : src/floodfill.o
+
+# target to build an object file
+src/floodfill.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/floodfill.cpp.o
+.PHONY : src/floodfill.cpp.o
+
+src/floodfill.i: src/floodfill.cpp.i
+
+.PHONY : src/floodfill.i
+
+# target to preprocess a source file
+src/floodfill.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/floodfill.cpp.i
+.PHONY : src/floodfill.cpp.i
+
+src/floodfill.s: src/floodfill.cpp.s
+
+.PHONY : src/floodfill.s
+
+# target to generate assembly for a file
+src/floodfill.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/floodfill.cpp.s
+.PHONY : src/floodfill.cpp.s
+
+src/grabcut.o: src/grabcut.cpp.o
+
+.PHONY : src/grabcut.o
+
+# target to build an object file
+src/grabcut.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/grabcut.cpp.o
+.PHONY : src/grabcut.cpp.o
+
+src/grabcut.i: src/grabcut.cpp.i
+
+.PHONY : src/grabcut.i
+
+# target to preprocess a source file
+src/grabcut.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/grabcut.cpp.i
+.PHONY : src/grabcut.cpp.i
+
+src/grabcut.s: src/grabcut.cpp.s
+
+.PHONY : src/grabcut.s
+
+# target to generate assembly for a file
+src/grabcut.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/grabcut.cpp.s
+.PHONY : src/grabcut.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,6 +231,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/superpixels.o: src/superpixels.cpp.o
+
+.PHONY : src/superpixels.o
+
+# target to build an object file
+src/superpixels.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/superpixels.cpp.o
+.PHONY : src/superpixels.cpp.o
+
+src/superpixels.i: src/superpixels.cpp.i
+
+.PHONY : src/superpixels.i
+
+# target to preprocess a source file
+src/superpixels.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/superpixels.cpp.i
+.PHONY : src/superpixels.cpp.i
+
+src/superpixels.s: src/superpixels.cpp.s
+
+.PHONY : src/superpixels.s
+
+# target to generate assembly for a file
+src/superpixels.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/superpixels.cpp.s
+.PHONY : src/superpixels.cpp.s
+
+src/threshold.o: src/threshold.cpp.o
+
+.PHONY : src/threshold.o
+
+# target to build an object file
+src/threshold.cpp.o:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/threshold.cpp.o
+.PHONY : src/threshold.cpp.o
+
+src/threshold.i: src/threshold.cpp.i
+
+.PHONY : src/threshold.i
+
+# target to preprocess a source file
+src/threshold.cpp.i:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/threshold.cpp.i
+.PHONY : src/threshold.cpp.i
+
+src/threshold.s: src/threshold.cpp.s
+
+.PHONY : src/threshold.s
+
+# target to generate assembly for a file
+src/threshold.cpp.s:
+	$(MAKE) -f CMakeFiles/main.exe.dir/build.make CMakeFiles/main.exe.dir/src/threshold.cpp.s
+.PHONY : src/threshold.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main.exe"
 	@echo "... edit_cache"
+	@echo "... src/common.o"
+	@echo "... src/common.i"
+	@echo "... src/common.s"
+	@echo "... src/floodfill.o"
+	@echo "... src/floodfill.i"
+	@echo "... src/floodfill.s"
+	@echo "... src/grabcut.o"
+	@echo "... src/grabcut.i"
+	@echo "... src/grabcut.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/superpixels.o"
+	@echo "... src/superpixels.i"
+	@echo "... src/superpixels.s"
+	@echo "... src/threshold.o"
+	@echo "... src/threshold.i"
+	@echo "... src/threshold.s"
 .PHONY : help
 
 

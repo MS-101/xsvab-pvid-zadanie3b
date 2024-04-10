@@ -1,36 +1,51 @@
-#include <opencv2/opencv.hpp>
 #include "grabcut.h"
 #include "superpixels.h"
+#include "floodfill.h"
+#include "threshold.h"
+#include "common.h"
+#include <opencv2/opencv.hpp>
+#include <unordered_map>
 
 
 int main() {
 	// VOC12 dataset segmentation
 
-	cv::Mat input1 = cv::imread("../input/images/2007_000033.jpg");
-	cv::Mat mask1 = cv::imread("../input/masks/2007_000033.jpg", cv::IMREAD_GRAYSCALE);
-	cv::Mat truth1 = cv::imread("../input/truth/2007_000033.png");
+	std::string inputDir = "../input/VOC12/images/";
+	std::string labelDir = "../input/VOC12/labels/";
+	std::string maskDir = "../input/VOC12/masks/";
 
-	/*
-	cv::Mat input2 = cv::imread("../input/images/2007_000123.jpg");
-	cv::Mat mask2 = cv::imread("../input/masks/2007_000123.jpg", cv::IMREAD_GRAYSCALE);
-	cv::Mat truth2 = cv::imread("../input/truth/2007_000123.png");
+	std::string inputExtension = ".jpg";
+	std::string labelExtension = ".png";
+	std::string maskExtension = ".jpg";
 
-	cv::Mat input3 = cv::imread("../input/images/2007_000063.jpg");
-	cv::Mat mask3 = cv::imread("../input/masks/2007_000063.jpg", cv::IMREAD_GRAYSCALE);
-	cv::Mat truth3 = cv::imread("../input/truth/2007_000063.png");
-	*/
+	std::vector<std::string> imageNames = {
+		"2007_000033",
+		"2007_000123",
+		"2007_000063"
+	};
 
-	grabcut(input1, mask1, truth1);
-	/*
-	grabcut(input2, mask2, truth2);
-	grabcut(input3, mask3, truth3);
-	*/
+	for (std::string imageName : imageNames)
+	{
+		// load input images
 
-	/*
-	superpixels(input1, truth1);
-	superpixels(input2, truth2);
-	superpixels(input3, truth3);
-	*/
+		cv::Mat input = cv::imread(inputDir + imageName + inputExtension);
+		cv::Mat label = cv::imread(labelDir + imageName + labelExtension);
+		cv::Mat mask = cv::imread(maskDir + imageName + maskExtension, cv::IMREAD_GRAYSCALE);
+
+		// create truth mask
+
+		cv::Mat truthMask, truth;
+		createTruthMask(label, truthMask, 0, 0, 128);
+		applyMask(input, truthMask, truth);
+		outputTruthMask(imageName, input, label, truthMask, truth);
+
+		// perform segmentation
+
+		grabcut(imageName, input, mask, truthMask, truth);
+		superpixels(imageName, input, truthMask, truth);
+		floodfill(imageName, input, truthMask, truth);
+		threshold(imageName, input, truthMask, truth);
+	}
 
 	return 0;
 }

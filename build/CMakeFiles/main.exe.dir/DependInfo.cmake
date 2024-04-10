@@ -4,7 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/pvid-zadanie3/src/common.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/common.cpp.o"
+  "/home/pvid-zadanie3/src/floodfill.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/floodfill.cpp.o"
+  "/home/pvid-zadanie3/src/grabcut.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/grabcut.cpp.o"
   "/home/pvid-zadanie3/src/main.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/main.cpp.o"
+  "/home/pvid-zadanie3/src/superpixels.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/superpixels.cpp.o"
+  "/home/pvid-zadanie3/src/threshold.cpp" "/home/pvid-zadanie3/build/CMakeFiles/main.exe.dir/src/threshold.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
